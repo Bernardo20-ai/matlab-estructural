@@ -1,0 +1,363 @@
+/* ==========================================================================
+   Aprendiendo MATLAB para análisis estructural - Estilos Principales
+   ========================================================================== */
+
+:root {
+  /* Paleta Académica y Sobria */
+  --color-primary: #1a365d;        /* Azul institucional profundo */
+  --color-primary-light: #2b6cb0;  /* Azul medio para acentos activos */
+  --color-primary-dark: #0f2442;   /* Azul noche para cabeceras y sidebar */
+  --color-accent: #c05621;         /* Tono ladrillo / ingeniería para destacar */
+  --color-accent-hover: #9c4221;
+  --color-secondary: #4a5568;      /* Gris pizarra para textos secundarios */
+  
+  /* Fondos y Superficies */
+  --bg-app: #f8fafc;              /* Fondo general gris claro neutro */
+  --bg-card: #ffffff;             /* Fondo de tarjetas e interfaz */
+  --bg-sidebar: #0f172a;          /* Fondo oscuro del menú lateral */
+  --bg-sidebar-active: #1e293b;
+  --bg-sidebar-hover: #1e293b;
+  
+  /* Cajas de Código */
+  --bg-code: #0b0f19;             /* Fondo oscuro profundo para código MATLAB */
+  --bg-output: #020617;           /* Fondo Command Window */
+  --border-code: #1e293b;
+  --text-code: #e2e8f0;
+  --text-output: #38bdf8;         /* Cyan claro tipo terminal */
+  
+  /* Textos y Contraste */
+  --text-primary: #0f172a;        /* Texto principal de alta legibilidad */
+  --text-secondary: #334155;      /* Texto secundario */
+  --text-muted: #64748b;          /* Texto atenuado */
+  --text-on-dark: #f8fafc;        /* Texto en fondos oscuros */
+  --text-on-dark-muted: #94a3b8;
+  
+  /* Bordes y Líneas */
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-accent: #e2e8f0;
+  
+  /* Estados */
+  --status-success: #15803d;
+  --status-success-bg: #f0fdf4;
+  --status-warning: #b45309;
+  --status-warning-bg: #fffbeb;
+  --status-danger: #b91c1c;
+  --status-danger-bg: #fef2f2;
+  --status-info: #0369a1;
+  --status-info-bg: #f0f9ff;
+  
+  /* Tipografías */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Consolas", "Cascadia Code", "Fira Code", Menlo, Monaco, "Courier New", monospace;
+  
+  /* Medidas y Sombras */
+  --sidebar-width: 290px;
+  --header-height: 64px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+/* Reset y Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-app);
+  line-height: 1.65;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Estructura Principal */
+#app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+#sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--bg-sidebar);
+  color: var(--text-on-dark);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.sidebar-header {
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-on-dark);
+  cursor: pointer;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #1d4ed8, #c2410c);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.brand-text h1 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.brand-text span {
+  font-size: 0.72rem;
+  color: var(--text-on-dark-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-progress {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-on-dark-muted);
+}
+
+.progress-header strong {
+  color: #38bdf8;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #38bdf8);
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem 0.5rem;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+
+.nav-section-title {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-on-dark-muted);
+  padding: 0.75rem 0.75rem 0.35rem;
+  font-weight: 700;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.84rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-bottom: 2px;
+  transition: all 0.15s ease;
+}
+
+.nav-item:hover {
+  background-color: var(--bg-sidebar-hover);
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background-color: var(--bg-sidebar-active);
+  color: #38bdf8;
+  font-weight: 600;
+  border-left: 3px solid #38bdf8;
+}
+
+.nav-item-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-item-icon {
+  font-size: 0.95rem;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.nav-status-badge {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  color: var(--text-on-dark-muted);
+}
+
+.nav-status-badge.completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+/* Área Principal */
+#main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+/* Topbar */
+#topbar {
+  height: var(--header-height);
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  flex-shrink: 0;
+  z-index: 30;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-toggle-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.current-breadcrumb {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.current-breadcrumb span {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-box-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-app);
+  border: 1px solid var(--border-medium);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.search-box-btn:hover {
+  border-color: var(--color-primary-light);
+  color: var(--text-primary);
+}
+
+.kbd-shortcut {
+  background: #fff;
+  border: 1px solid var(--border-medium);
+  border-radius: 3px;
+  font-size: 0.7rem;
+  padding: 1px 4px;
+  font-family: var(--font-mono);
+}
+
+/* Contenedor del Contenido Scrolleable */
+#content-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 2.5rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+#content-container {
+  max-width: 920px;
+  width: 100%;
+}

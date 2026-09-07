@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Adaptabilidad Responsive (Móvil, Tablet y Desktop)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+  
+  #content-scroll-area {
+    padding: 1.5rem 1.25rem 3rem;
+  }
+  
+  .lesson-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  #sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .menu-toggle-btn {
+    display: inline-flex;
+  }
+  
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+  
+  .sidebar-backdrop.active {
+    display: block;
+  }
+  
+  #content-scroll-area {
+    padding: 1.25rem 1rem 3rem;
+  }
+  
+  .lesson-section {
+    padding: 1.25rem;
+  }
+  
+  .exercise-controls {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .line-by-line-item {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}

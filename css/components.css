@@ -1,0 +1,659 @@
+/* ==========================================================================
+   Componentes Específicos: Lecciones, Código, Fórmulas y Ejercicios
+   ========================================================================== */
+
+/* 1. Encabezado de Lección y Tarjeta de Objetivos */
+.lesson-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.lesson-tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+}
+
+.lesson-title {
+  font-size: 1.85rem;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+/* Tarjeta de Objetivo */
+.objective-card {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.objective-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.objective-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* 2. Secciones Didácticas */
+.lesson-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-heading-icon {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+/* 3. Bloques Matemáticos y Fórmulas */
+.math-block {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.math-display {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+}
+
+.math-inline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  color: #1e3a8a;
+  padding: 0 2px;
+}
+
+/* 4. Glosario de Variables de la Lección */
+.variable-table-wrapper {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+}
+
+.variable-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.variable-table th {
+  background-color: #f1f5f9;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border-medium);
+}
+
+.variable-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.variable-table tr:last-child td {
+  border-bottom: none;
+}
+
+.variable-table tr:hover {
+  background-color: #f8fafc;
+}
+
+.var-tag {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* 5. Cajas de Código MATLAB (Tema Oscuro con Botón Copiar) */
+.code-container {
+  background: var(--bg-code);
+  border-radius: var(--radius-md);
+  margin: 1.25rem 0;
+  overflow: hidden;
+  border: 1px solid var(--border-code);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.code-header {
+  background: #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #334155;
+}
+
+.code-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.matlab-badge {
+  background: #c2410c;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.copy-btn.copied {
+  background: #15803d;
+  color: #fff;
+  border-color: #22c55e;
+}
+
+.code-body {
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+}
+
+.code-body pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-code);
+}
+
+/* Resaltado de sintaxis MATLAB */
+.m-keyword { color: #38bdf8; font-weight: bold; }  /* clc, clear, for, function, if */
+.m-comment { color: #6ee7b7; font-style: italic; } /* % comentario */
+.m-string  { color: #f472b6; }                      /* 'texto' */
+.m-number  { color: #fbbf24; }                      /* 100, 3.1416 */
+.m-func    { color: #a78bfa; font-weight: 600; }   /* zeros, ones, eye, size, length, inv, plot */
+.m-var     { color: #f1f5f9; }
+
+/* 6. Caja de Salida / Command Window */
+.output-container {
+  background: var(--bg-output);
+  border-radius: var(--radius-md);
+  margin: 1.25rem 0;
+  border: 1px solid #1e293b;
+  border-left: 4px solid #38bdf8;
+  overflow: hidden;
+}
+
+.output-header {
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: #7dd3fc;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.output-body {
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
+.output-body pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-output);
+}
+
+/* 7. Explicación Línea por Línea */
+.line-by-line-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.line-by-line-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--border-medium);
+  font-size: 0.92rem;
+}
+
+.line-by-line-item:last-child {
+  border-bottom: none;
+}
+
+.line-code-tag {
+  font-family: var(--font-mono);
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+  align-self: flex-start;
+  border: 1px solid #cbd5e1;
+}
+
+.line-explanation {
+  flex: 1;
+  color: var(--text-secondary);
+}
+
+/* 8. Callouts de Interpretación y Errores Frecuentes */
+.callout {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.25rem 0;
+  display: flex;
+  gap: 0.85rem;
+}
+
+.callout-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.callout-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.callout-content p {
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.callout-interpretation {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #16a34a;
+}
+.callout-interpretation h4 { color: #166534; }
+.callout-interpretation p { color: #14532d; }
+
+.callout-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #dc2626;
+}
+.callout-error h4 { color: #991b1b; }
+.callout-error p { color: #7f1d1d; }
+
+/* 9. Ejercicios Interactivos */
+.exercise-box {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s;
+}
+
+.exercise-box.guided {
+  border-color: #cbd5e1;
+  background: #fafafa;
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.exercise-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.exercise-badge.guided-badge {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.exercise-badge.interactive-badge {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.exercise-prompt {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.exercise-input-wrapper {
+  margin: 1rem 0;
+}
+
+.exercise-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  border: 2px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  outline: none;
+  background: #fff;
+  transition: all 0.2s;
+}
+
+.exercise-input:focus {
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+}
+
+.exercise-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: #fff;
+  font-size: 0.92rem;
+  transition: all 0.15s;
+}
+
+.option-label:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.option-label input[type="radio"] {
+  accent-color: var(--color-primary-light);
+  width: 16px;
+  height: 16px;
+}
+
+.exercise-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-light);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: var(--text-secondary);
+  border-color: #cbd5e1;
+}
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+  color: var(--text-primary);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border-color: #cbd5e1;
+}
+.btn-outline:hover {
+  background-color: #f8fafc;
+  color: var(--text-primary);
+}
+
+.exercise-feedback {
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.exercise-feedback.active {
+  display: block;
+}
+
+.feedback-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.feedback-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.feedback-hint {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.feedback-solution {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
+}
+
+/* 10. Navegación entre Lecciones y Barra de Finalización */
+.lesson-footer-nav {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.complete-lesson-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background-color: #15803d;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.complete-lesson-btn:hover {
+  background-color: #166534;
+}
+
+.complete-lesson-btn.is-completed {
+  background-color: #e2e8f0;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+/* 11. Modal de Búsqueda */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.search-modal {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 600px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+}
+
+.search-modal-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-modal-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.search-results-list {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.search-result-item {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-result-item:hover {
+  background: #f1f5f9;
+}
+
+.search-result-item h5 {
+  font-size: 0.92rem;
+  color: var(--color-primary);
+  margin-bottom: 0.2rem;
+}
+
+.search-result-item p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
